@@ -16,7 +16,7 @@ Before the `mongoose.connect` line in `models/index.js`.
 
 Make sure the buttons for Edit and Delete at the bottom of your show.jsx view use the place's DB id.
 
-Updat this code:
+Update this code:
 
 ```javascript
 <div>
@@ -60,6 +60,7 @@ To this code:
         </button>
     </form>
 </div>
+```
 
 ## Step 3a - Edit Controller
 
@@ -99,11 +100,11 @@ action={`/places/${data.id}?_method=PUT`}
 
 to this:
 
-```
+```jsx
 action={`/places/${data.place.id}?_method=PUT`}
 ```
 
-## Step 3c - Edit the PUT route in the controller.
+## Step 3c - Edit the PUT route in the places controller.
 
 Back in the places controller, modify the route following route in your controller:
 
@@ -138,7 +139,7 @@ router.put("/:id", (req, res) => {
 });
 ```
 
-## Step 3 - Fix delete
+## Step 4 - Fix delete
 
 Find the delete route in your places controller
 
