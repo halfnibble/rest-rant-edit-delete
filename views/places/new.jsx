@@ -1,8 +1,8 @@
 // Part 5: this file was added for part 5
-const React = require('react')
-const Def = require('../default')
+const React = require("react");
+const Def = require("../default");
 
-const new_form = ()=>{
+const new_form = () => {
     return (
         <Def>
             <main>
@@ -29,16 +29,21 @@ const new_form = ()=>{
                         <input className="form-control" id="state" name="state" />
                     </div>
                     <div className="form-group col-sm-12">
-                        <label for="founded">Founded Year</label>
-                        <input type="number" className="form-control" id="founded" name="founded" value={new Date().getFullYear()} />
+                        <label htmlFor="founded">Founded Year</label>
+                        <input
+                            type="number"
+                            className="form-control"
+                            id="founded"
+                            name="founded"
+                            defaultValue={new Date().getFullYear()}
+                        />
                     </div>
 
                     <input className="btn btn-primary" type="submit" value="Add Place" />
                 </form>
             </main>
         </Def>
-    )
-}
+    );
+};
 
-
-module.exports = new_form
+module.exports = new_form;

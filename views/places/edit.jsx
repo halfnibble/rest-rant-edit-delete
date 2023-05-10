@@ -6,10 +6,7 @@ const edit_form = (data) => {
         <Def>
             <main>
                 <h1>Edit Place</h1>
-                <form
-                    method="POST"
-                    action={`/places/${data.id}?_method=PUT`}
-                >
+                <form method="POST" action={`/places/${data.place.id}?_method=PUT`}>
                     <div className="row">
                         <div className="form-group col-sm-6">
                             <label htmlFor="name">Place Name</label>
@@ -17,7 +14,7 @@ const edit_form = (data) => {
                                 className="form-control"
                                 id="name"
                                 name="name"
-                                value={data.place.name}
+                                defaultValue={data.place.name}
                                 required
                             />
                         </div>
@@ -28,6 +25,7 @@ const edit_form = (data) => {
                                 type="url"
                                 id="pic"
                                 name="pic"
+                                defaultValue={data.place.pic}
                             />
                         </div>
                         <div className="form-group col-sm-6">
@@ -36,6 +34,7 @@ const edit_form = (data) => {
                                 className="form-control"
                                 id="city"
                                 name="city"
+                                defaultValue={data.place.city}
                             />
                         </div>
                         <div className="form-group col-sm-6">
@@ -44,6 +43,7 @@ const edit_form = (data) => {
                                 className="form-control"
                                 id="state"
                                 name="state"
+                                defaultValue={data.place.state}
                             />
                         </div>
                         <div className="form-group col-sm-12">
@@ -53,14 +53,11 @@ const edit_form = (data) => {
                                 id="cuisines"
                                 name="cuisines"
                                 required
+                                defaultValue={data.place.cuisines}
                             />
                         </div>
                     </div>
-                    <input
-                            className="btn btn-primary"
-                            type="submit"
-                            value="Add Place"
-                    />
+                    <input className="btn btn-primary" type="submit" value="Save Place" />
                 </form>
             </main>
         </Def>
